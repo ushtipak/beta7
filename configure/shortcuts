@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# configure app shortcuts
+
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Alt><Super>bracketright" -t string -s "xflock4"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Alt><Super>t" -t string -s "thunar"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Alt>F1" -t string -s "xfce4-popup-whiskermenu"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Alt>F2" -t string -s "xfce4-appfinder --collapsed"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt><Super>Down" -t string -s "amixer -q sset Master 3%-"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt><Super>s" -t string -s "subl -n"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt><Super>space" -t string -s "amixer -q sset Master toggle"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt><Super>Up" -t string -s "amixer -q sset Master 3%+"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt>c" -t string -s "/usr/bin/google-chrome"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt>f" -t string -s "firefox"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt>m" -t string -s "mousepad"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt>s" -t string -s "subl"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Alt>t" -t string -s "xfce4-terminal"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Shift><Alt><Super>g" -t string -s "/home/m/cpeople/goland/bin/goland.sh"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Shift><Alt><Super>i" -t string -s "/home/m/cpeople/idea/bin/idea.sh"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Shift><Alt><Super>j" -t string -s "/home/m/cpeople/webstorm/bin/webstorm.sh"
+xfconf-query -c xfce4-keyboard-shortcuts -n -p "/commands/custom/<Primary><Shift><Alt><Super>y" -t string -s "/home/m/cpeople/pycharm/bin/pycharm.sh"
+
