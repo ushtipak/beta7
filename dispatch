@@ -3,3 +3,4 @@
 mkdir ~/.themes
 cp style/Stem ~/.themes -R
 
+cp dotfiles/gitconfig ~/.gitconfig
