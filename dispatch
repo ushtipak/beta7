@@ -1,6 +1,13 @@
 #!/bin/bash
 
-mkdir ~/.themes
-cp style/Stem ~/.themes -R
+[[ ! -d ~/.themes/Stem ]] && mkdir ~/.themes && cp style/Stem ~/.themes -R
+[[ ! -f ~/.gitconfig ]] && cp dotfiles/gitconfig ~/.gitconfig
 
-cp dotfiles/gitconfig ~/.gitconfig
+for dir in Documents Music Pictures Public Templates Videos; do
+  [[ -d ${dir} ]] && rmdir ${dir}
+done
+
+for dir in live-test local-temp .config/anomaly cpeople/{workspace-{andorid,go,java,js,misc,py},misc-install}; do
+  [[ ! -d ${dir} ]] && mkdir -pv ~/${dir}
+done
+
