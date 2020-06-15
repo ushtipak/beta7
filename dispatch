@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[[ ! -f /etc/sudoers.d/$USER ]] && echo -e "su\necho \"$USER ALL=(ALL) NOPASSWD:ALL"\" \> /etc/sudoers.d/$USER && exit 1
+
 [[ ! -d ~/.themes/Stem ]] && mkdir ~/.themes && cp style/Stem ~/.themes -R
 [[ ! -f ~/.gitconfig ]] && cp dotfiles/gitconfig ~/.gitconfig
 
