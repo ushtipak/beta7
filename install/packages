@@ -2,7 +2,9 @@
 
 sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1
 
-cd ~/cpeople/misc-install
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-DEBIAN_FRONTEND=noninteractive sudo dpkg -i google-chrome-stable_current_amd64.deb
+if [[ ! "$(dpkg -l google-chrome-stable | grep ii)" =~ "ii  google-chrome-stable" ]]; then
+  cd ~/cpeople/misc-install
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  DEBIAN_FRONTEND=noninteractive sudo dpkg -i google-chrome-stable_current_amd64.deb
+fi
 
