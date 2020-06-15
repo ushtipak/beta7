@@ -1,10 +1,17 @@
 #!/bin/bash
 
-sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1
+sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1 apt-transport-https
 
 if [[ ! "$(dpkg -l google-chrome-stable | grep ii)" =~ "ii  google-chrome-stable" ]]; then
   cd ~/cpeople/misc-install
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   DEBIAN_FRONTEND=noninteractive sudo dpkg -i google-chrome-stable_current_amd64.deb
+fi
+
+if [[ ! -f /etc/apt/sources.list.d/sublime-text.list ]]; then
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  sudo apt-get -y update
+  sudo apt-get -y install sublime-text
 fi
 
