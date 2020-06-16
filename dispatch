@@ -14,3 +14,8 @@ for dir in live-test local-temp .config/anomaly cpeople/{workspace-{andorid,go,j
   [[ ! -d ${dir} ]] && mkdir -pv ~/${dir}
 done
 
+ssh-keygen -t rsa -f /home/$USER/.ssh/id_rsa -t rsa -b 4096 -q -P ""
+echo -e "ssh key generated:\n"
+cat /home/$USER/.ssh/id_rsa.pub
+echo -e "\nadd it: https://github.com/settings/keys"
+
