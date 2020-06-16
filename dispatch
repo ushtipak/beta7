@@ -4,6 +4,7 @@
 
 [[ ! -d ~/.themes/Stem ]] && mkdir ~/.themes && cp style/Stem ~/.themes -R
 [[ ! -f ~/.gitconfig ]] && cp dotfiles/gitconfig ~/.gitconfig
+[[ ! -f ~/.bash_aliases ]] && cp dotfiles/bash_aliases ~/.bash_aliases
 
 for dir in Documents Music Pictures Public Templates Videos; do
   [[ -d ${dir} ]] && rmdir ${dir}
