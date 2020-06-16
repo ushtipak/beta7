@@ -32,5 +32,6 @@ if [[ "x$(grep go/bin $HOME/.profile)" == "x" ]]; then
   source ~/.profile
   go fmt systems.go
   go run systems.go
+  rm systems.go
 fi
 
