@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1 apt-transport-https tree
+sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1 apt-transport-https tree xfce4-whiskermenu-plugin
 
 if [[ ! "$(dpkg -l google-chrome-stable | grep ii)" =~ "ii  google-chrome-stable" ]]; then
   cd ~/cpeople/misc-install
@@ -14,7 +14,6 @@ if [[ ! -f /etc/apt/sources.list.d/sublime-text.list ]]; then
   sudo apt-get -y update
   sudo apt-get -y install sublime-text
 fi
-
 
 if [[ "x$(grep go/bin $HOME/.profile)" == "x" ]]; then
   cd ~/cpeople/misc-install
