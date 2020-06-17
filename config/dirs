@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+for dir in Documents Music Pictures Public Templates Videos; do
+  [[ -d ${dir} ]] && rmdir ${dir}
+done
+
+for dir in live-test local-temp .config/anomaly cpeople/{workspace-{andorid,go,java,js,misc,py},misc-install}; do
+  [[ ! -d ${dir} ]] && mkdir -pv ~/${dir}
+done
+

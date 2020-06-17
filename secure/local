@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+[[ ! -f /etc/sudoers.d/$USER ]] && echo -e "su\necho \"$USER ALL=(ALL) NOPASSWD:ALL"\" \> /etc/sudoers.d/$USER && exit 1
+ssh-keygen -t rsa -f /home/$USER/.ssh/id_rsa -t rsa -b 4096 -q -P ""
+echo -e "ssh key generated:\n"
+cat /home/$USER/.ssh/id_rsa.pub
+echo -e "\nadd it: https://github.com/settings/keys"
+

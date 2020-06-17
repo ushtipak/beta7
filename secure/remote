@@ -18,3 +18,4 @@ if [[ ! -d ${disposition} ]]; then
   ./disposition -debug -pooling-option restore
   mv /tmp/disposition/{disposition-state.db,plain/opt/disposition/plain/,remote} ${disposition}
 fi
+
