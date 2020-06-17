@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+disposition="/opt/disposition"
+if [[ ! -d ${disposition} ]]; then
+  sudo mkdir ${disposition}
+  sudo chown $USER. ${disposition}
+  cd ${disposition}
+  wget https://github.com/ushtipak/disposition/releases/download/v0.1/disposition
+  chmod +x disposition
+  echo -n "key? "; IFS= read -s key
+  [[ ${#key} != 32 ]] && echo "key needs to be 256 bits" && exit 1
+  echo -e "---\nroot:\n  plain: \"/opt/disposition/plain\"\n  encrypted: \"/opt/disposition/remote\"\nsecret:\n  key: \"${key}\"\n  state: \"/opt/disposition/disposition-state.db\"\n  obfuscated: \"cb693879-5319-4221-919d-fac96401abfa\"" > ${disposition}/disposition.yml
+  mkdir -pv /tmp/disposition/plain
+  git clone git@github.com:ushtipak/disposition-jerryboree.git
+  mv disposition-jerryboree /tmp/disposition/remote
+  ./disposition -debug -pooling-option restore
+  mv /tmp/disposition/{disposition-state.db,plain/opt/disposition/plain/,remote} ${disposition}
+fi
