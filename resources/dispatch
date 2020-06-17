@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[[ ! -f ~/.gitconfig ]] && cp resources/dotfiles/gitconfig ~/.gitconfig
+[[ ! -f ~/.bash_aliases ]] && cp resources/dotfiles/bash_aliases ~/.bash_aliases
+[[ ! -d ~/.themes/Stem ]] && mkdir ~/.themes && cp resources/themes/Stem ~/.themes -R
+cp resources/dotfiles/sublime-settings ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+cp resources/dotfiles/sublime-keymap ~/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap
+

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 sudo apt install -y firefox-esr chromium gimp lsof dnsutils libappindicator3-1 apt-transport-https tree xfce4-whiskermenu-plugin linux-headers-amd64
 
 if [[ ! "$(dpkg -l google-chrome-stable | grep ii)" =~ "ii  google-chrome-stable" ]]; then
